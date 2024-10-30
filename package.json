@@ -2,6 +2,9 @@
   "name": "cdk-infra",
   "module": "index.ts",
   "type": "module",
+  "bin": {
+    "create-workflows": "scripts/create-workflows.js"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "aws-cdk": "^2.164.1"
@@ -14,3 +17,4 @@
     "constructs": "^10.4.2"
   }
 }
+
