@@ -1,0 +1,16 @@
+{
+  "name": "cdk-infra",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "aws-cdk": "^2.164.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.164.1",
+    "constructs": "^10.4.2"
+  }
+}
