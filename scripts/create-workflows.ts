@@ -12,16 +12,29 @@ const createWorkflows = () => {
     console.log(`Workflows directory already exists`);
   }
 
-  //copy from templates/release-please.yaml to .github/workflows/
   const releasePleaseTemplate = fs.readFileSync(
-    path.resolve(__dirname, "templates/release-please.yaml"),
+    path.resolve(__dirname, "../templates/release-please.yaml"),
+    "utf8"
+  );
+
+  const deployTemplate = fs.readFileSync(
+    path.resolve(__dirname, "../templates/deploy.yaml"),
     "utf8"
   );
 
   fs.writeFileSync(
-    path.resolve(__dirname, workflowsPath, "release-please.yaml"),
+    path.resolve(workflowsPath, "release-please.yaml"),
     releasePleaseTemplate
   );
+
+  fs.writeFileSync(
+    path.resolve(workflowsPath, "deploy.yaml"),
+    deployTemplate
+  );
+
+  console.log("\x1b[43m\x1b[30m%s\x1b[0m", "IMPORTANT");
+  console.log("\x1b[43m\x1b[30m%s\x1b[0m", "Make sure to create environment stg and prd in the github repository settings");
+  console.log("\x1b[43m\x1b[30m%s\x1b[0m", "Add people to the environment protection rules");
 };
 
 createWorkflows();
