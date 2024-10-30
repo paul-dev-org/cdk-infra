@@ -3,7 +3,10 @@
   "module": "index.ts",
   "type": "module",
   "bin": {
-    "create-workflows": "scripts/create-workflows.js"
+    "create-workflows": "scripts/create-workflows"
+  },
+  "scripts": {
+    "build-workflows": "bun build --compile --minify --sourcemap --bytecode ./scripts/create-workflows.ts --outfile scripts/create-workflows"
   },
   "devDependencies": {
     "@types/bun": "latest",
