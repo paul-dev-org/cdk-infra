@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env ts-node-script
 
 import * as fs from "fs";
 import { execSync } from "child_process";
